@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:short_path_coordinate_system/constants/constants.dart';
 
 import '../../models/coordinates_model.dart';
 import '../../repositories/coordinates_repository/base_coordinates_repository.dart';
@@ -14,7 +15,7 @@ class CoordinatesCubit extends Cubit<CoordinatesState> {
   final String errorMessage = 'Set valid API base URL in order to continue';
 
   bool checkEnteredUrl({required String url}) {
-    if (!url.contains(url)) {
+    if (!url.contains(baseUrl)) {
       emit(ErrorCoordinates(errorMessage));
       return false;
     } else {
