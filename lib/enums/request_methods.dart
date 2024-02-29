@@ -1,0 +1,1 @@
+enum RequestMethods { post, get }
