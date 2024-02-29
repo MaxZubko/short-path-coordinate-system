@@ -77,8 +77,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                   title: 'Start counting process',
                   onPressed: () async {
                     final enteredUrl = _controller.text;
-                    if (enteredUrl.isNotEmpty &&
-                        cubit.checkEnteredUrl(url: enteredUrl)) {
+                    if (cubit.checkEnteredUrl(url: enteredUrl)) {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const ProcessScreen(),
